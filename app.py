@@ -29,7 +29,7 @@ app = Flask(__name__)
 model = load_model()
 
 # --- API Endpoints ---
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def predict():
     if not model:
         return jsonify({'error': 'Model is not loaded'}), 500
